@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SprocketsSelbeeP2.SprocketForm"
+             Title="SprocketForm">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="25">
+            <Label 
+                Text="SprocketForm"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Item ID"/>
+                <Editor
+                    x:Name="ItemIDEntry"
+                    Grid.Column="1"
+                    Placeholder="Enter Item ID" />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Material"/>
+                <Picker
+                    x:Name="MaterialPicker"
+                    Grid.Column="1"
+                    Title="Select Material">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Steel</x:String>
+                            <x:String>Aluminum</x:String>
+                            <x:String>Plastic</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Teeth Quantity"/>
+                <Editor
+                    x:Name="TeethQTYEntry"
+                    Grid.Column="1"
+                    Placeholder="Enter Teeth Quantity"
+                    Keyboard="Numeric" />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Item Quantity"/>
+                <Editor
+                    x:Name="ItemQTYEntry"
+                    Grid.Column="1"
+                    Placeholder="Enter Item Quantity"
+                    Keyboard="Numeric" />
+            </Grid>
+            <!-- FORM BUTTONS -->
+            <FlexLayout>
+                <Button x:Name="AddItemButton"
+                        Text="Add to Order"
+                        Margin="0,0,5,0"
+                        Clicked="AddItemButtonClicked" />
+                <Button x:Name="CancelItemButton"
+                        Text="Cancel"
+                        Margin="0,0,5,0"
+                        Clicked="CancelItemButtonClicked" />
+            </FlexLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
